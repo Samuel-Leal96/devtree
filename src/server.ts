@@ -2,11 +2,10 @@
 
 import express from 'express';  // ES Modules
 
+import router from './router';
+
 const app = express();
 
-//Routing
-app.get('/', (req, res) => {
-    res.send('Hola mundo en Express / TypeScript!');
-});
+app.use('/', router);
 
 export default app;
