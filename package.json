@@ -10,7 +10,10 @@
   "author": "Samuel Leal Vega",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "colors": "^1.4.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.5.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
