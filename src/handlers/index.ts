@@ -40,3 +40,23 @@ export const createAccount = async (req: Request, res: Response) => {
 
     res.status(201).send('Usuario registrado correctamente');
 }
+
+export const login = async (req: Request, res: Response) => {
+    //* Manejar errores de validación
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email } = req.body;
+
+    const user = await User.findOne({ email })
+
+    if (!user) {
+        const error = new Error('El usuario no existe');
+        return res.status(404).json({ error: error.message });
+    }
+
+    console.log('Si existe usuario');
+}
